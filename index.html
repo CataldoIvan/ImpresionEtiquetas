@@ -21,6 +21,9 @@
       padding: 0;
      
     }
+    .card-body{
+      padding: 5px 5px 5px 5px ;
+    }
     .form {
       margin: auto;
       padding: 20px;
@@ -32,9 +35,10 @@
       margin: auto;
     }
     .code{
-      font-size: 35px;
+      font-size: 40px;
       font-weight: bold;
-      padding: 0 0 0 10;
+      padding: 0 0 0 10px;
+     
     }
     .barCode{
       margin: 0 10 0 0;
@@ -57,7 +61,11 @@
       border: 1px solid black;
       border-collapse: collapse;
     }
-   
+   #admissionDate,#dueDate,#qty,#position{
+     font-size: large;
+     font-weight: bold;
+
+   }
 
     @media print {
       /*CONFIGURACION PARA LA IMPRESION HORIZONTAL UBICADO EN EL CENTRO*/
@@ -219,8 +227,8 @@
       }
       let fecha = new Date();
       JsBarcode("#barcode", "000-000",{
-     
-        height:80
+        width:3,
+        height:100
       });
 
       document.getElementById("admissionDate").innerHTML =
