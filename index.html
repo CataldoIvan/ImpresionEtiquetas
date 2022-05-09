@@ -87,48 +87,22 @@
           visibility: visible;
         }
 
-      /*CONFIGURACION PARA LA IMPRESION HORIZONTAL PRA QUE OCUPE TODO EL ESPACIO*/
-      /* @page {
-        size: landscape;
-        float: none;
-        margin: 2cm;
-      }
-      .code {
-        margin-top: 70px;
-        margin-left: 10px;
-        font-size: 135px;
-        font-weight: bold;
-      }
-      #barcode {
-        margin-top: 50px;
-        width: 400px;
-        height: 300px;
-      }
-      .form {
-        display: none;
-      }
-      .desing {
-        visibility: visible;
-        width: 100vw;
-      }
-      .card-body {
-        height: 700px;
-        margin: 0;
-        padding: 0;
-      }
-      table {
-      position: absolute;
-      bottom: 20px;
-      left: 70px;
-      font-size: 50px;
-      width: 80%;
-      text-align: center;
-    } */
     }
   </style>
   <body>
     <div class="">
       <div class="form">
+        <header class="row" style="display: flex;">
+          <div class="col-2">
+            <img src="logo_1.png" alt="" width="120">
+
+          </div>
+          
+          <div class="titulo col-10" style="text-align: center; margin-top: 30px;">
+            
+            <h1>Impresion de Etiquetas Zebra</h1>
+          </div>
+        </header>
         <div class="row g-3">
           <div class="col-6">
             <input
@@ -176,9 +150,15 @@
             />
           </div>
         </div>
-        <a onclick="imprimir()" class="btn btn-primary">Imprimir</a>
-        <a href="#tema1" target="_blank" class="btn btn-primary">Button</a>
+        <br>
+        <div>
+          <a onclick="imprimir()" class="btn btn-primary" style="width: 170px; text-align: center;">Imprimir</a>
+        </div>
+       
       </div>
+      <br>
+      <br>
+
       <div class="desing ">
         <div class="card " id="tema1">
           <div class="card-body  ">
