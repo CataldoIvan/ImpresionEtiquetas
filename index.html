@@ -31,15 +31,23 @@
       width: 300px;
       margin: auto;
     }
-    
+    .code{
+      font-size: 35px;
+      font-weight: bold;
+      padding: 0 0 0 10;
+    }
+    .barCode{
+      margin: 0 10 0 0;
+      padding: 0;
+    }
     svg{
       width: 120px;
-      height: 50px;
+      height: 60px;
     }
     table {
       position: relative;
       bottom: 10px;
-      left: 10px;
+      left: 20px;
       font-size: 12px;
       width: 80%;
       text-align: center;
@@ -49,10 +57,7 @@
       border: 1px solid black;
       border-collapse: collapse;
     }
-    .code {
-      font-size: 30px;
-      font-weight: bold;
-    } 
+   
 
     @media print {
       /*CONFIGURACION PARA LA IMPRESION HORIZONTAL UBICADO EN EL CENTRO*/
@@ -62,9 +67,7 @@
           height: 50mm;
           margin: 0;
           padding: 0;
-          box-sizing: border-box;
-          page-break-after: always;
-          left: 0;
+          
         }
 
         .form {
@@ -172,8 +175,8 @@
         <div class="card " id="tema1">
           <div class="card-body  ">
             <section class="card-text row">
-              <p class="code col-6" id="code">000-000</p>
-              <p class="barCode col-6">
+              <p class="code col-7" id="code">000-000</p>
+              <p class="barCode col-5">
                 <svg id="barcode" ></svg>
               </p>
             </section>
@@ -217,7 +220,7 @@
       let fecha = new Date();
       JsBarcode("#barcode", "000-000",{
      
-        height:70
+        height:80
       });
 
       document.getElementById("admissionDate").innerHTML =
@@ -232,7 +235,7 @@
         if (e.ariaLabel === "code") {
           JsBarcode("#barcode", e.value,{
        
-        height:70
+        height:80
       });
         }
         console.log(e.ariaLabel);
