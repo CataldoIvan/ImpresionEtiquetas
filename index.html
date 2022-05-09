@@ -19,7 +19,7 @@
     * {
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
+     
     }
     .form {
       margin: auto;
@@ -28,18 +28,19 @@
       background-color: rgb(235, 235, 235);
     }
     .desing {
+      width: 300px;
       margin: auto;
-      width: 700px;
-      background-color: peru;
     }
-    .card-body {
-      height: 429px;
+    
+    svg{
+      width: 120px;
+      height: 50px;
     }
     table {
-      position: absolute;
-      bottom: 20px;
-      left: 70px;
-      font-size: 30px;
+      position: relative;
+      bottom: 10px;
+      left: 10px;
+      font-size: 12px;
       width: 80%;
       text-align: center;
     }
@@ -48,14 +49,10 @@
       border: 1px solid black;
       border-collapse: collapse;
     }
-    th,
-    td {
-      padding: 8px;
-    }
     .code {
-      font-size: 85px;
+      font-size: 30px;
       font-weight: bold;
-    }
+    } 
 
     @media print {
       /*CONFIGURACION PARA LA IMPRESION HORIZONTAL UBICADO EN EL CENTRO*/
@@ -171,34 +168,36 @@
         <a onclick="imprimir()" class="btn btn-primary">Imprimir</a>
         <a href="#tema1" target="_blank" class="btn btn-primary">Button</a>
       </div>
-      <div class="desing">
-        <div class="card" id="tema1">
-          <div class="card-body">
+      <div class="desing ">
+        <div class="card " id="tema1">
+          <div class="card-body  ">
             <section class="card-text row">
-              <p class="code col-7" id="code">000-000</p>
-              <p class="barCode col-4">
-                <svg id="barcode"></svg>
+              <p class="code col-6" id="code">000-000</p>
+              <p class="barCode col-6">
+                <svg id="barcode" ></svg>
               </p>
             </section>
+           
 
-            <table>
-              <tr>
-                <th>Ingreso</th>
-                <th>Vencimiento</th>
-              </tr>
-              <tr>
-                <td id="admissionDate"></td>
-                <td id="dueDate">01/12/2099</td>
-              </tr>
-              <tr>
-                <th>Cantidad</th>
-                <th>Posicion</th>
-              </tr>
-              <tr>
-                <td id="qty">00</td>
-                <td id="position">A1 01</td>
-              </tr>
-            </table>
+              <table>
+                <tr>
+                  <th>Ingreso</th>
+                  <th>Vencimiento</th>
+                </tr>
+                <tr>
+                  <td id="admissionDate"></td>
+                  <td id="dueDate">01/12/2099</td>
+                </tr>
+                <tr>
+                  <th>Cantidad</th>
+                  <th>Posicion</th>
+                </tr>
+                <tr>
+                  <td id="qty">00</td>
+                  <td id="position">A1 01</td>
+                </tr>
+              </table>
+            
           </div>
         </div>
       </div>
@@ -216,7 +215,10 @@
         window.print();
       }
       let fecha = new Date();
-      JsBarcode("#barcode", "000-000");
+      JsBarcode("#barcode", "000-000",{
+     
+        height:70
+      });
 
       document.getElementById("admissionDate").innerHTML =
         fecha.getDate() +
@@ -228,7 +230,10 @@
       function refresData(e) {
         document.getElementById(e.ariaLabel).innerHTML = e.value.toUpperCase();
         if (e.ariaLabel === "code") {
-          JsBarcode("#barcode", e.value);
+          JsBarcode("#barcode", e.value,{
+       
+        height:70
+      });
         }
         console.log(e.ariaLabel);
         console.log(e.value);
