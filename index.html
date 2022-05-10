@@ -19,10 +19,9 @@
     * {
       margin: 0;
       padding: 0;
-     
     }
-    .card-body{
-      padding: 5px 5px 5px 5px ;
+    .card-body {
+      padding: 5px 5px 5px 5px;
     }
     .form {
       margin: auto;
@@ -34,17 +33,16 @@
       width: 300px;
       margin: auto;
     }
-    .code{
-      font-size: 40px;
+    .code {
+      font-size: 39px;
       font-weight: bold;
       padding: 0 0 0 10px;
-     
     }
-    .barCode{
+    .barCode {
       margin: 0 10 0 0;
       padding: 0;
     }
-    svg{
+    svg {
       width: 120px;
       height: 60px;
     }
@@ -61,45 +59,45 @@
       border: 1px solid black;
       border-collapse: collapse;
     }
-   #admissionDate,#dueDate,#qty,#position{
-     font-size: large;
-     font-weight: bold;
-
-   }
+    #admissionDate,
+    #dueDate,
+    #qty,
+    #position {
+      font-size: large;
+      font-weight: bold;
+    }
 
     @media print {
       /*CONFIGURACION PARA LA IMPRESION HORIZONTAL UBICADO EN EL CENTRO*/
-       @page {
-          size: landscape;
-          width: 80mm;
-          height: 50mm;
-          margin: 0;
-          padding: 0;
-          
-        }
+      @page {
+        size: landscape;
+        width: 80mm;
+        height: 50mm;
+        margin: 0;
+        padding: 0;
+      }
 
-        .form {
+      .form {
+        display: none;
+      }
 
-          display: none;
-        }
-
-        .desing {
-          visibility: visible;
-        }
-
+      .desing {
+        visibility: visible;
+      }
     }
   </style>
   <body>
     <div class="">
       <div class="form">
-        <header class="row" style="display: flex;">
+        <header class="row" style="display: flex">
           <div class="col-2">
-            <img src="logo_1.png" alt="" width="120">
-
+            <img src="logo_1.png" alt="" width="120" />
           </div>
-          
-          <div class="titulo col-10" style="text-align: center; margin-top: 30px;">
-            
+
+          <div
+            class="titulo col-10"
+            style="text-align: center; margin-top: 30px"
+          >
             <h1>Impresion de Etiquetas Zebra</h1>
           </div>
         </header>
@@ -150,45 +148,47 @@
             />
           </div>
         </div>
-        <br>
+        <br />
         <div>
-          <a onclick="imprimir()" class="btn btn-primary" style="width: 170px; text-align: center;">Imprimir</a>
+          <a
+            onclick="imprimir()"
+            class="btn btn-primary"
+            style="width: 170px; text-align: center"
+            >Imprimir</a
+          >
         </div>
-       
       </div>
-      <br>
-      <br>
+      <br />
+      <br />
 
-      <div class="desing ">
-        <div class="card " id="tema1">
-          <div class="card-body  ">
+      <div class="desing">
+        <div class="card" id="tema1">
+          <div class="card-body">
             <section class="card-text row">
               <p class="code col-7" id="code">000-000</p>
               <p class="barCode col-5">
-                <svg id="barcode" ></svg>
+                <svg id="barcode"></svg>
               </p>
             </section>
-           
 
-              <table>
-                <tr>
-                  <th>Ingreso</th>
-                  <th>Vencimiento</th>
-                </tr>
-                <tr>
-                  <td id="admissionDate"></td>
-                  <td id="dueDate">01/12/2099</td>
-                </tr>
-                <tr>
-                  <th>Cantidad</th>
-                  <th>Posicion</th>
-                </tr>
-                <tr>
-                  <td id="qty">00</td>
-                  <td id="position">A1 01</td>
-                </tr>
-              </table>
-            
+            <table>
+              <tr>
+                <th>Ingreso</th>
+                <th>Vencimiento</th>
+              </tr>
+              <tr>
+                <td id="admissionDate"></td>
+                <td id="dueDate">01/12/2099</td>
+              </tr>
+              <tr>
+                <th>Cantidad</th>
+                <th>Posicion</th>
+              </tr>
+              <tr>
+                <td id="qty">00</td>
+                <td id="position">A1 01</td>
+              </tr>
+            </table>
           </div>
         </div>
       </div>
@@ -206,9 +206,9 @@
         window.print();
       }
       let fecha = new Date();
-      JsBarcode("#barcode", "000-000",{
-        width:3,
-        height:100
+      JsBarcode("#barcode", "000-000", {
+        width: 3,
+        height: 100,
       });
 
       document.getElementById("admissionDate").innerHTML =
@@ -221,10 +221,9 @@
       function refresData(e) {
         document.getElementById(e.ariaLabel).innerHTML = e.value.toUpperCase();
         if (e.ariaLabel === "code") {
-          JsBarcode("#barcode", e.value,{
-       
-        height:80
-      });
+          JsBarcode("#barcode", e.value, {
+            height: 80,
+          });
         }
         console.log(e.ariaLabel);
         console.log(e.value);
