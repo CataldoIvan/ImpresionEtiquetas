@@ -12,8 +12,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <link rel="shortcut icon" href="logo_1.ico" type="image/x-icon">
 
-    <title>Hello, world!</title>
+    <title>Impresion Etiquetas</title>
   </head>
   <style>
     * {
@@ -109,6 +110,7 @@
               placeholder="Ingrese el codigo del articulo"
               aria-label="code"
               onchange="refresData(this)"
+              tabindex="1"
             />
           </div>
           <div class="col-6">
@@ -118,6 +120,7 @@
               placeholder="Fecha de ingreso"
               aria-label="admissionDate"
               onchange="refresData(this)"
+              tabindex="2"
             />
           </div>
           <div class="col">
@@ -127,6 +130,7 @@
               placeholder="Fecha de Vencimiento"
               aria-label="dueDate"
               onchange="refresData(this)"
+              tabindex="3"
             />
           </div>
           <div class="col">
@@ -136,6 +140,7 @@
               placeholder="Cantidad"
               aria-label="qty"
               onchange="refresData(this)"
+              tabindex="4"
             />
           </div>
           <div class="col">
@@ -145,6 +150,7 @@
               placeholder="Posicion"
               aria-label="position"
               onchange="refresData(this)"
+              tabindex="5"
             />
           </div>
         </div>
@@ -154,6 +160,7 @@
             onclick="imprimir()"
             class="btn btn-primary"
             style="width: 170px; text-align: center"
+            tabindex="6"
             >Imprimir</a
           >
           <br>
