@@ -156,6 +156,9 @@
             style="width: 170px; text-align: center"
             >Imprimir</a
           >
+          <br>
+          <span style="font-size:12px ;">Para imprimir podes 
+            seleccionar <code> Ctrl+Enter</code></span>
         </div>
       </div>
       <br />
@@ -228,6 +231,14 @@
         console.log(e.ariaLabel);
         console.log(e.value);
       }
+
+      document.addEventListener("keydown",(e)=>{
+        console.log(e.keyCode);
+        if(e.ctrlKey && e.keyCode===13 ){
+          imprimir()
+
+        }
+      })
     </script>
   </body>
 </html>
